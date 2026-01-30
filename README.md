@@ -1,26 +1,14 @@
-### EventPass API (Gestão de Eventos)
 
-**Cenário:** Um sistema para gerenciar pequenos shows, workshops ou palestras e seus participantes.
-**Desafio de Lógica:** Controle de Capacidade (Vagas).
+# EventPass API 🎟️
 
-#### 🗄️ Entidades (Banco de Dados)
-* **Eventos:** `id`, `nome`, `data`, `capacidade_maxima`, `local`.
-* **Participantes:** `id`, `nome`, `email`, `evento_id` (FK).
+## Como rodar no VS Code
 
-#### 🔌 Requisitos Funcionais (Endpoints)
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
-* `POST /eventos`
-    * Criar um evento definindo quantas pessoas cabem.
+API disponível em:
+http://localhost:5000
 
-* `POST /inscricao`
-    * Inscrever um participante em um evento.
-    * **Regra de Ouro:** Antes de salvar, o sistema deve verificar se o número de inscritos é menor que a `capacidade_maxima`. Se estiver lotado, retornar erro `400` ("Evento Lotado").
-
-* `GET /eventos/<id>/participantes`
-    * Listar todos os nomes confirmados naquele evento.
-
-* `DELETE /inscricao/<id>`
-    * Cancelar uma inscrição (liberando a vaga para outra pessoa).
-
-* `GET /eventos/lotados`
-    * Retornar apenas os eventos que já atingiram a capacidade máxima.
+Importe a coleção Thunder Client que está na pasta /thunder.
